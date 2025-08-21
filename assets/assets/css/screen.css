@@ -1,0 +1,37 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.screen{
+    padding-top: 10rem;
+    height: 100vh;
+}
+
+.seat {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      margin: 5px;
+      line-height: 45px;
+      text-align: center;
+      border: 1px solid #ff4d6d;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+     .seat.selected {
+      background: #ff4d6d;
+      color: #fff;
+    }
+/* Booked (disabled) seat */
+.seat.booked {
+  background-color: #6c757d !important; 
+  color: #fff !important;
+  border-color: #6c757d !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}

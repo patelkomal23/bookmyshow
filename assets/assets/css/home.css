@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  background-color: rgb(52, 79, 73) !important;
+} */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-inline: 7.5vw;
+}
+
+.hero-section {
+  height: 100vh;
+  background: url('/assets/img/coolie.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;   
+}
+
+.links {
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+
+
+/* ---------- Card  ---------- */
+.movie-card-section{
+  height: auto;
+  padding-top: 5vw;
+}
+
+.card{
+  background-color: rgb(37, 37, 37) !important;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.card-body {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  height: 22vw;
+  object-fit: fill;
+  width: 100%;
+}
+
+/* -------- Trailer ---------- */
+.trailer-card{
+  padding-block: 3rem;
+}
+
+/*------footer------*/
+ .footer {
+        background-color: #3b3b3b;
+        color: #bbb;
+        padding: 40px 0;
+        font-size: 14px;
+      }
+      .footer a {
+        color: #bbb;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+      .footer a:hover {
+        color: #ff3d5a;
+      }
+      .footer .footer-heading {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+      .footer .social-icons a {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #bbb;
+      }
+      .footer .social-icons a:hover {
+        color: #ff3d5a;
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid #444;
+        padding-top: 20px;
+        margin-top: 20px;
+        font-size: 13px;
+      }

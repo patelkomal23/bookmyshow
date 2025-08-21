@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BookMyShow</title>
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <!--navbar start-->
+     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container-fluid px-3 px-md-4">
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <span class="logo-ticket"
+            ><img
+              src="data:image/png;base64,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"
+              height="60"
+              alt=""
+          /></span>
+        </a>
+
+        <!-- Search -->
+        <form class="d-none d-lg-flex flex-grow-1 mx-3">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></span>
+            <input
+              class="form-control border-start-0"
+              type="search"
+              placeholder="Search for Movies, Events, Plays, Sports and Activities"
+            />
+          </div>
+        </form>
+
+        <!-- Right side -->
+        <div class="d-flex align-items-center gap-3">
+          <div class="dropdown">
+            <button
+              class="btn btn-sm btn-outline-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              <i class="fa-solid fa-location-dot me-1"></i> Navsari
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Surat</a></li>
+              <li><a class="dropdown-item" href="#">Vadodara</a></li>
+              <li><a class="dropdown-item" href="#">Ahmedabad</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-sm btn-outline-dark rounded-circle p-2 d-flex align-items-center justify-content-center"
+              data-bs-toggle="dropdown"
+            >
+              <i class="fa-regular fa-user"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="dropdown-header small text-muted px-3">
+                Hi, Payal Patel
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">My Bookings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Search -->
+      <div class="container-fluid d-lg-none px-3 pb-2">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+          <input
+            class="form-control border-start-0"
+            type="search"
+            placeholder="Search for Movies, Events, Plays, Sports and Activities"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!--navbar end-->
+     <div class="bg-white border-bottom">
+      <div
+        class="container-fluid px-3 px-md-4 d-flex gap-4 align-items-center overflow-auto py-2 small"
+      >
+        <a
+          href="#"
+          class="text-decoration-none text-dark fw-semibold hover-dark"
+          >Movies</a
+        >
+        <a
+          href="#"
+          class="text-decoration-none text-dark fw-semibold hover-dark"
+          >Stream</a
+        >
+        <a
+          href="#"
+          class="text-decoration-none text-dark fw-semibold hover-dark"
+          >Events</a
+        >
+        <a
+          href="#"
+          class="text-decoration-none text-dark fw-semibold hover-dark"
+          >Plays</a
+        >
+        <a
+          href="#"
+          class="text-decoration-none text-dark fw-semibold hover-dark"
+          >Sports</a
+        >
+        <a
+          href="#"
+          class="text-decoration-none text-dark fw-semibold hover-dark"
+          >Activities</a
+        >
+        <div class="ms-auto d-none d-md-flex gap-4">
+          <a href="#" class="text-decoration-none text-muted">ListYourShow</a>
+          <a href="#" class="text-decoration-none text-muted">Corporates</a>
+          <a href="#" class="text-decoration-none text-muted">Offers</a>
+          <a href="#" class="text-decoration-none text-muted">Gift Cards</a>
+        </div>
+      </div>
+    </div>
+
+      <section class="container-fluid">
+      <div class="hero-wrapper">
+        <img
+          src="https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1755155608642_minecraftflashsaleweb.jpg"
+         width="100%"
+          alt="Hero banner"
+        />
+      </div>
+    </section>
+    
+<!--2387284-->
+    <!-- Hero-section -->
+    
+
+    <!-- cards section -->
+    <section class="movie-card-section">
+      <div class="container">
+        <div class="movie-content">
+          <div class="m-header d-flex justify-content-between align-items-center">
+            <span class="text-white fw-medium fs-4">Now Showing</span>
+            <a href="" class="text-decoration-none text-danger">
+              View all 
+              <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+          </div>
+          <div class="movie-card mt-5 d-flex gap-5 flex-wrap">
+            <% movie.map((val)=>{ %>
+              <div class="card" style="width: 17rem;">
+              <img src="<%= val.image%>" class="card-img-top p-2 rounded-4" alt="...">
+              <div class="card-body text-white">
+                <h5 class="card-title"><%= val.m_name %></h5>
+                <p class="card-text">
+                  <span>2025 |</span>
+                  <span>Action | Thriller</span>
+                  <span>| <%= val.m_time %></span>
+                </p>
+                <a href="/movie/<%= val.id%>" class="btn btn-danger rounded-pill">Buy Ticket</a>
+              </div>
+            </div>
+            <% }) %>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="container p-0 mt-5">
+      <img
+        src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/stream-leadin-web-collection-202210241242.png"
+        class="img-fluid w-100 rounded"
+        alt="BookMyShow Stream"
+      />
+    </div>
+
+    <!-- Trailers -->
+     <section class="trailer-card">
+      <div class="container mt-5">
+  <h2 class="text-white">Trailers</h2>
+
+  <!-- Featured trailer -->
+  <!-- <% if (trailer.length > 0) { %>
+    <div class="mb-4">
+
+      <iframe width="100%" height="480"
+        src="<%= trailer[0].youtubeUrl %>"
+        title="<%= trailer[0].title %>" frameborder="0"
+        allowfullscreen class="p-4">
+      </iframe>
+
+      <h3 class="text-white mt-2"><%= trailer[0].title %></h3>
+      <p class="text-secondary"><%= trailer[0].description %></p>
+    </div>
+  <% } %> -->
+
+  <!-- Thumbnails -->
+  <div class="d-flex gap-5 flex-wrap">
+    <% trailer.forEach((trailer, i) => { %>
+      <div class="card bg-dark text-white" style="width: 17rem;">
+        <img src="<%= trailer.thumbnail %>" class="card-img-top p-2 rounded-4" alt="<%= trailer.title %>">
+        <div class="card-body">
+          <h5><%= trailer.title %></h5>
+          <a href="<%= trailer.youtubeUrl %>" target="_blank" class="btn btn-danger">Watch</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+     </section>
+     
+
+    <!-- Footer -->
+     <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Movies Section -->
+          <div class="col-md-3 col-sm-6">
+            <h6 class="footer-heading">MOVIES NOW SHOWING</h6>
+            <p>
+              <a href="#">War 2</a> | <a href="#">Coolie</a> |
+              <a href="#">Mahavatar Narsimha</a>
+            </p>
+
+            <h6 class="footer-heading mt-3">UPCOMING MOVIES</h6>
+            <p>
+              <a href="#">The Case Diary</a> | <a href="#">Nobody 2</a> |
+              <a href="#">Just Married</a>
+            </p>
+          </div>
+
+          <!-- Genres -->
+          <div class="col-md-3 col-sm-6">
+            <h6 class="footer-heading">MOVIES BY GENRE</h6>
+            <p>
+              <a href="#">Action Movies</a> | <a href="#">Thriller Movies</a> |
+              <a href="#">Classic Movies</a>
+            </p>
+
+            <h6 class="footer-heading mt-3">MOVIES BY LANGUAGE</h6>
+            <p>
+              <a href="#">Hindi</a> | <a href="#">English</a> |
+              <a href="#">Tamil</a> | <a href="#">Telugu</a>
+            </p>
+          </div>
+
+          <!-- Top Cities -->
+          <div class="col-md-3 col-sm-6">
+            <h6 class="footer-heading">EVENTS IN TOP CITIES</h6>
+            <p>
+              <a href="#">Mumbai</a> | <a href="#">Delhi</a> |
+              <a href="#">Bengaluru</a> | <a href="#">Hyderabad</a>
+            </p>
+
+            <h6 class="footer-heading mt-3">CINEMAS IN TOP CITIES</h6>
+            <p>
+              <a href="#">Mumbai</a> | <a href="#">Chennai</a> |
+              <a href="#">Pune</a>
+            </p>
+          </div>
+
+          <!-- Help & Social -->
+          <div class="col-md-3 col-sm-6">
+            <h6 class="footer-heading">HELP</h6>
+            <p>
+              <a href="#">About Us</a> | <a href="#">Contact Us</a> |
+              <a href="#">FAQs</a>
+            </p>
+
+            <h6 class="footer-heading mt-3">FOLLOW US</h6>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom mt-4">
+          <img
+            src="https://in.bmscdn.com/webin/common/icons/logo.svg"
+            alt="BookMyShow Logo"
+            style="height: 40px"
+          />
+          <p class="mt-2">
+            Copyright © 2025 Bigtree Entertainment Pvt. Ltd. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

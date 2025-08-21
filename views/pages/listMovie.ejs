@@ -1,0 +1,78 @@
+<%- include('../partials/header.ejs')%>
+
+    <div class="main-panel">
+		<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Movie List</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Movies On Screen</h4>
+                                <p class="category">On going ...</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <th>Sr No.</th>
+                                    	<th>Poster</th>
+                                        <th>Name</th>
+                                    	<th>Language</th>
+                                    	<th>Description</th>
+                                    	<th>Time</th>
+                                        <th>Release Date</th>
+                                        <th>Age Limit</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <% movie.map((val,idx)=>{ 
+                                            const {image,m_name,m_time,m_date,description,age,language,id} = val;
+                                        %>
+                                            <tr>
+                                                <td><%= idx+1 %></td>
+                                                <td>
+                                                    <img src='../<%= image %>' alt="image" width="70" height="70">
+                                                </td>
+                                                <td><%= m_name%></td>
+                                                <td><%= language %></td>
+                                                <td><%= description %></td>
+                                                <td><%= m_time %></td>
+                                                <td><%= m_date %></td>
+                                                <td><%= age %></td>
+                                                <td>
+                                                    <a href="/edit/<%= id %>" class="btn btn-warning me-1">Edit</a>
+                                                    <a href="/delete/<%= id %>" class="btn btn-danger me-1">Delete</a>
+                                                </td>
+                                            </tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer.ejs')%>
